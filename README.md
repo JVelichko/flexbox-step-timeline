@@ -49,7 +49,7 @@ Pug transforms the above to HTML:
 
 Labels are aligned in the center of the check-points. In this case, the first and the last has left and right alignment, respectively. Labels can be placed both above and below the timeline.
 
-![Dotted timeline](https://imgur.com/M5iRtmo)
+![alt text](https://imgur.com/M5iRtmo "Dotted timeline")
 
 Pug:
 
@@ -97,7 +97,7 @@ HTML:
 Labels are aligned in the center of progress line. Labels can be placed both above and below the timeline.
 Don't include label to the last step. Four steps timeline will have 4 progress lines and 5 check-points.
 
-![Lined timeline](https://imgur.com/nGD2yYd)
+![alt text](https://imgur.com/nGD2yYd "Lined timeline")
 
 Pug:
 
