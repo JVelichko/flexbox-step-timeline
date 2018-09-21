@@ -1,0 +1,154 @@
+body {
+  position: relative;
+  max-width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+.container {
+  max-width: 100%;
+  padding: 0 15px;
+  margin: 100px auto 0;
+}
+
+/* Step timeline */
+
+$dot-width: 14px;
+$border-width: 3px;
+$full-dot: $dot-width + 2 * $border-width;
+$past-color: #4ea31e;
+$current-color: #f49530;
+$future-color: #e5e5e5;
+
+.timeline-step {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  padding: 50px 0 0 50px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+
+  & .step {
+    position: relative;
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 0%;
+    flex: 1 1 0%;
+    margin: 0;
+    padding: 0;
+    white-space: nowrap;
+    min-width: $full-dot;
+    height: 40px;
+
+    &:last-child {
+      -webkit-box-flex: 0;
+      -ms-flex-positive: 0;
+      flex-grow: 0;
+    }
+
+    &:not(:last-child):after {
+      content: "";
+      display: block;
+      position: absolute;
+      z-index: -10;
+      top: $full-dot / 2;
+      right: -$full-dot / 2;
+      width: 100%;
+      background-color: $future-color;
+      height: 2px;
+    }
+  }
+
+  & .marker {
+    position: relative;
+    width: $dot-width;
+    height: $dot-width;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 1;
+            -ms-flex: 1 0 auto;
+                flex: 1 0 auto;
+    border-radius: 50%;
+    border: $border-width solid #fff;
+    white-space: nowrap;
+    margin: 0;
+  }
+
+  & .step.past:after,
+  & .step.past > .marker {
+    background-color: $past-color;
+  }
+
+  & .step.current:after,
+  & .step.current > .marker {
+    background-color: $current-color;
+  }
+
+  & .step.future > .marker {
+    background-color: #fff;
+    -webkit-box-shadow: 0 0 0 $border-width $future-color inset;
+            box-shadow: 0 0 0 $border-width $future-color inset;
+  }
+
+  /*   Style */
+
+  &.dotted {
+
+    .step.current:after {
+      background-color: $future-color;
+    }
+
+    .step > .title {
+      display: inline-block;
+    }
+
+    .step:not(:first-child):not(:last-child) > .title {
+      -webkit-transform: translateX(calc(-50% + #{$full-dot} / 2));
+      transform: translateX(calc(-50% + #{$full-dot} / 2));
+    }
+
+    .step:first-child > .title {
+      padding-left: $full-dot / 2;
+    }
+
+    .step:last-child {
+      margin: 0;
+    }
+
+    .step:last-child > .title {
+      padding-right: $full-dot / 2;
+      -webkit-transform: translateX(calc(-100% + #{$full-dot}));
+      transform: translateX(calc(-100% + #{$full-dot}));
+    }
+  }
+
+  &.lined {
+    .step {
+      text-align: center;
+    }
+
+    .title {
+      padding-left: 20px;
+    }
+  }
+
+  &.up {
+    .title {
+      position: relative;
+      top: -40px;
+    }
+  }
+}
+
+span {
+  font-family: sans-serif;
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+}
