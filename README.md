@@ -7,18 +7,18 @@ Step timeline component is written in SCSS using flexbox and can be used for ada
  Pug example:
 ```pug
 .timeline-step.dotted
-        .step.past
-          span.marker
-          span.title Step 1
-        .step.past
-          span.marker
-          span.title Step 2
-        .step.current
-          span.marker
-          span.title Step 3
-        .step.future
-          span.marker
-          span.title Step 4
+  .step.past
+    span.marker
+    span.title Step 1
+  .step.past
+    span.marker
+    span.title Step 2
+  .step.current
+    span.marker
+    span.title Step 3
+  .step.future
+    span.marker
+    span.title Step 4
 ```
 
 Pug transforms the above to HTML:
@@ -55,18 +55,18 @@ Pug:
 
 ```pug
 .timeline-step.dotted.up
-        .step.past
-          span.marker
-          span.title Step 1
-        .step.past
-          span.marker
-          span.title Step 2
-        .step.current
-          span.marker
-          span.title Step 3
-        .step.future
-          span.marker
-          span.title Step 4
+  .step.past
+    span.marker
+    span.title Step 1
+  .step.past
+    span.marker
+    span.title Step 2
+  .step.current
+    span.marker
+    span.title Step 3
+  .step.future
+    span.marker
+    span.title Step 4
 ```
 
 HTML:
@@ -103,20 +103,20 @@ Pug:
 
 ```pug
 .timeline-step.lined
-        .step.past
-          span.marker
-          span.title step 1
-        .step.past
-          span.marker
-          span.title step 2
-        .step.current
-          span.marker
-          span.title step 3
-        .step.future
-          span.marker
-          span.title step 4
-        .step.future
-          span.marker
+  .step.past
+    span.marker
+    span.title step 1
+  .step.past
+    span.marker
+    span.title step 2
+  .step.current
+    span.marker
+    span.title step 3
+  .step.future
+    span.marker
+    span.title step 4
+  .step.future
+    span.marker
 ```
 
 HTML:
